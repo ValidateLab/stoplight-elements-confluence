@@ -1,0 +1,16 @@
+services:
+  confluence:
+    image: atlassian/confluence:7.17.4
+    ports:
+      - "8090:8090"
+      - "8091:8091"
+    depends_on:
+      - postgres
+    # admin:
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      - POSTGRES_USER=confluence
+      - POSTGRES_PASSWORD=qwerty
+      - POSTGRES_DB=confluence
