@@ -1,4 +1,4 @@
-package com.oneandone.sourcecenter.confluence.webvideo.macro;
+package com.validate_lab.confluence.stoplightelements_previewer.macro;
 
 import com.atlassian.confluence.content.render.xhtml.ConversionContext;
 import com.atlassian.confluence.macro.Macro;
@@ -13,7 +13,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Scanned
-public class WebVideo implements Macro {
+public class StoplightElementsPreviewer implements Macro {
 	private PageBuilderService pageBuilderService;
 	private String[] video_formats = {"mp4","webm","ogg","ogv","ogm","avi","flv"};
 	private String[] picture_formats = {"jpg","png"};
@@ -29,7 +29,7 @@ public class WebVideo implements Macro {
 	private final int VIDEOLINK = 7;
 	
 	@Autowired
-    public WebVideo(@ComponentImport PageBuilderService pageBuilderService) {
+    public StoplightElementsPreviewer(@ComponentImport PageBuilderService pageBuilderService) {
         this.pageBuilderService = pageBuilderService;
     }
 	/**

@@ -5,26 +5,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.oneandone.sourcecenter.confluence.webvideo</groupId>
-    <artifactId>WebVideo</artifactId>
+    <groupId>com.validate_lab.confluence.stoplightelements_previewer</groupId>
+    <artifactId>StoplightElements</artifactId>
     <version>1.0</version>
 
     <organization>
-        <name>United Internet</name>
-        <url>https://united-internet.org</url>
+        <name>ValidateLab</name>
+        <url>https://github.com/ValidateLab</url>
     </organization>
 
-    <name>WebVideo</name>
-    <description>This is the Webvideo plugin for Atlassian Confluence.</description>
+    <name>Stoplight Elements</name>
+    <description>This is the Stoplight Elements plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
 
     <developers>
         <developer>
-            <id>chzanner</id>
-            <name>Christian Zanner</name>
-            <email>chzanner@united-internet.de</email>
-            <url>https://united-internet.org/profiles/people/21533898</url>
-            <organization>United Internet Sourcing &amp; Apprenticeship GmbH</organization>
+            <id>ValidateLab</id>
+            <name>Validate Lab</name>
+            <url>https://github.com/ValidateLab</url>
+            <organization>Validate Lab</organization>
             <timezone>1</timezone>
         </developer>
     </developers>
@@ -103,7 +102,7 @@
 
                         <!-- Add package to export here -->
                         <Export-Package>
-                            com.oneandone.sourcecenter.confluence.webvideo.api,
+                            com.validate_lab.confluence.stoplightelements_previewer.api,
                         </Export-Package>
 
                         <!-- Add package import here -->
@@ -145,8 +144,8 @@
     </build>
 
     <properties>
-        <confluence.version>6.14.0</confluence.version>
-        <confluence.data.version>6.14.0</confluence.data.version>
+        <confluence.version>7.17.4</confluence.version>
+        <confluence.data.version>7.17.4</confluence.data.version>
         <amps.version>8.0.2</amps.version>
         <plugin.testrunner.version>2.0.1</plugin.testrunner.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>

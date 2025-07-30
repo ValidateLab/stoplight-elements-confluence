@@ -14,13 +14,11 @@
     <!-- add our web resources -->
     <web-resource key="webvideo-resources" name="WebVideo Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        <resource type="download" name="WebVideo.css" location="/css/WebVideo.css"/>
-        <resource type="download" name="WebVideo.js" location="/js/WebVideo.js"/>
         <resource type="download" name="images/" location="/images"/>
-        <context>WebVideo</context>
+        <context>StoplightElementsPreviewer</context>
     </web-resource>
-     <xhtml-macro name="webvideo" class="com.oneandone.sourcecenter.confluence.webvideo.macro.WebVideo" key='webvideo' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
-        <description key="webvideo.macro.desc"/>
+     <xhtml-macro name="stoplight-elements-previewer" class="com.validate_lab.confluence.stoplightelements_previewer.macro.StoplightElementsPreviewer" key='webvideo' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
+        <description key="stoplight-elements-previewer.macro.desc"/>
         <category name="media" />
         <parameters>
             <parameter name="videolink" type="url" required="true">

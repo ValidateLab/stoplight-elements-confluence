@@ -1,4 +1,4 @@
-package com.oneandone.sourcecenter.confluence.webvideo.macro;
+package com.validate_lab.confluence.stoplightelements_previewer.macro;
 
 public enum Parameter {
 	width(1),

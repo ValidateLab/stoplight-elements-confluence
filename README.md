@@ -1,4 +1,4 @@
-# WebVideo plugin for Confluence
+# Stoplight elements plugin for Confluence
 
 ## Introduction
 
@@ -89,10 +89,14 @@ __Attention__: Please make sure that you save resources in UTF-8, otherwise you 
 
 ---
 
+- `docker-compose up -d`
+- Go to http://localhost:8090/ and complete setup
+
+All commands below should be run in `builder` container
 To build this project you need to use [SDK from Atlassian](https://developer.atlassian.com/server/framework/atlassian-sdk/downloads/).
 You can build this project immediately with `atlas-mvn package`.<br/>
 Upload the plugin after build example:
-`atlas-install-plugin --context-path "" --server localhost -p 8090 --username admin --password admin`. <br/>
+`atlas-install-plugin --context-path "" --server confluence -p 8090 --username admin --password admin`. <br/>
 Other option: You can upload the build JAR from /target directory and install in your confluence admin area.
 
 If you don't have a running local confluence for testing, you can use this:
