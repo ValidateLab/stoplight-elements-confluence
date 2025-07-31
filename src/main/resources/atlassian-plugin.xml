@@ -12,41 +12,19 @@
     <resource key="images" name="images/" type="download" location="/images"/> 
     
     <!-- add our web resources -->
-    <web-resource key="webvideo-resources" name="WebVideo Web Resources">
+    <web-resource key="resources" name="Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         <resource type="download" name="images/" location="/images"/>
-        <context>StoplightElementsPreviewer</context>
+        <resource type="download" name="styles.css" location="/css/styles.css"/>
+        <resource type="download" name="web-components.min.js" location="/js/web-components.min.js"/>
+        <context>WebVideo</context>
     </web-resource>
      <xhtml-macro name="stoplight-elements-previewer" class="com.validate_lab.confluence.stoplightelements_previewer.macro.StoplightElementsPreviewer" key='webvideo' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
         <description key="stoplight-elements-previewer.macro.desc"/>
         <category name="media" />
         <parameters>
-            <parameter name="videolink" type="url" required="true">
-                <option key="showValueInPlaceholder" value="false" />
-            </parameter>
-            <parameter name="preview" type="url">
-                <option key="showNameInPlaceholder" value="false" />
-                <option key="showValueInPlaceholder" value="false" />
-            </parameter>
-            <parameter name="autoplay" type="boolean">
-                <option key="showNameInPlaceholder" value="true" />
-                <option key="showValueInPlaceholder" value="false" />
-            </parameter>
-            <parameter name="muted" type="boolean">
-                <option key="showNameInPlaceholder" value="true" />
-                <option key="showValueInPlaceholder" value="false" />
-            </parameter>
-            <parameter name="loop" type="boolean">
-                <option key="showNameInPlaceholder" value="true" />
-                <option key="showValueInPlaceholder" value="false" />
-            </parameter>
-            <parameter name="width" type="int">
-                <option key="showNameInPlaceholder" value="true" />
-                <option key="showValueInPlaceholder" value="true" />
-            </parameter>        
-            <parameter name="height" type="int">
-                <option key="showNameInPlaceholder" value="true" />
-                <option key="showValueInPlaceholder" value="true" />
+            <parameter name="link" type="url" required="true" >
+                <option key="showValueInPlaceholder" value="false"/>
             </parameter>
         </parameters>
     </xhtml-macro>

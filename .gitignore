@@ -2,3 +2,4 @@
 .project
 .classpath
 .idea
+/atlassian-plugin-sdk

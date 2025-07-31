@@ -5,9 +5,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.validate_lab.confluence.stoplightelements_previewer</groupId>
-    <artifactId>StoplightElements</artifactId>
-    <version>1.0</version>
+    <groupId>com.validate_lab.confluence</groupId>
+    <artifactId>stoplightelements_previewer</artifactId>
+    <version>1.2</version>
 
     <organization>
         <name>ValidateLab</name>
@@ -17,7 +17,23 @@
     <name>Stoplight Elements</name>
     <description>This is the Stoplight Elements plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
-
+    <repositories>
+        <repository>
+            <id>atlassian-m2-repository</id>
+            <name>Atlassian Maven 2.x Repository</name>
+            <url>https://maven.artifacts.atlassian.com</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>atlassian-m2-repository</id>
+            <name>Atlassian Maven 2.x Repository</name>
+            <url>https://maven.artifacts.atlassian.com</url>
+        </pluginRepository>
+    </pluginRepositories>
     <developers>
         <developer>
             <id>ValidateLab</id>
@@ -30,10 +46,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.atlassian.confluence</groupId>

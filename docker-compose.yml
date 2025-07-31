@@ -1,13 +1,4 @@
 services:
-  builder:
-    build:
-      dockerfile: Dockerfile
-      context: .
-    volumes:
-      - .:/app
-    working_dir: /app
-    entrypoint: [ "sh", "-c", "while true; do sleep 1000; done" ]
-
   confluence:
     image: atlassian/confluence:7.17.4
     ports:
