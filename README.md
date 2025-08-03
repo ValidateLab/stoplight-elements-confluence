@@ -10,7 +10,6 @@ Further information about licensing you will find in LICENSE file.
 
 ![](./images/insert-app.png)
 
-
 ![](./images/example.png)
 
 ## Compatibility
