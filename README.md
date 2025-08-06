@@ -35,4 +35,6 @@ Further information about licensing you will find in LICENSE file.
 - Go to http://localhost:8090/ and complete setup:
   - Set `admin:admin` as admin credentials
   - Set `postgres` host, `confluence:qwerty` as database credentials
+- Up `<version>` in `pom.xml`
+- `make build`
 - `make upload`
