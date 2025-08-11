@@ -8,22 +8,37 @@
     </plugin-info>
 
     <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="WebVideo"/>
+    <resource type="i18n" name="i18n" location="previewer-context"/>
     <resource key="images" name="images/" type="download" location="/images"/> 
     
-    <!-- add our web resources -->
     <web-resource key="resources" name="Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         <resource type="download" name="images/" location="/images"/>
-        <resource type="download" name="styles.css" location="/css/styles.css"/>
+        <resource type="download" name="styles.css" location="/css/styles.css">
+            <property key="content-type" value="text/css"/>
+        </resource>
         <resource type="download" name="web-components.min.js" location="/js/web-components.min.js"/>
-        <context>WebVideo</context>
+        <context>previewer-context</context>
     </web-resource>
-     <xhtml-macro name="stoplight-elements-previewer" class="com.validate_lab.confluence.stoplightelements_previewer.macro.StoplightElementsPreviewer" key='webvideo' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
-        <description key="stoplight-elements-previewer.macro.desc"/>
+    <xhtml-macro name="previewer-workspace" class="com.validate_lab.confluence.stoplightelements_previewer.macro.StoplightElementsPreviewer" key='previewer-workspace' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
         <category name="media" />
         <parameters>
             <parameter name="link" type="url" required="true" >
+                <option key="showValueInPlaceholder" value="true"/>
+            </parameter>
+            <parameter name="hideInternal" type="boolean" default="false" >
+                <option key="showValueInPlaceholder" value="false"/>
+            </parameter>
+            <parameter name="hideTryIt" type="boolean" default="false" >
+                <option key="showValueInPlaceholder" value="false"/>
+            </parameter>
+            <parameter name="hideTryItPanel" type="boolean" default="false" >
+                <option key="showValueInPlaceholder" value="false"/>
+            </parameter>
+            <parameter name="hideSchemas" type="boolean" default="false" >
+                <option key="showValueInPlaceholder" value="false"/>
+            </parameter>
+            <parameter name="hideExport" type="boolean" default="false" >
                 <option key="showValueInPlaceholder" value="false"/>
             </parameter>
         </parameters>

@@ -20,11 +20,19 @@ public class StoplightElementsPreviewer implements Macro {
         this.pageBuilderService = pageBuilderService;
     }
 
-    public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
+    public String execute(Map<String, String> parameters, String s, ConversionContext conversionContext) throws MacroExecutionException {
         // load JS and CSS
         pageBuilderService.assembler().resources().requireWebResource("com.validate_lab.confluence.stoplightelements_previewer:resources");
 
-        return "<elements-api apiDescriptionUrl=\"" + map.get("link") + "\"  router=\"hash\" />";
+        return "<elements-api" +
+                " apiDescriptionUrl=\"" + parameters.get("link") + "\"" +
+                " hideInternal=\"" + getBoolean(parameters, "hideInternal", "false") + "\"" +
+                " hideTryIt=\"" + getBoolean(parameters, "hideTryIt", "false") + "\"" +
+                " hideTryItPanel=\"" + getBoolean(parameters, "hideTryItPanel", "false") + "\"" +
+                " hideSchemas=\"" + getBoolean(parameters, "hideSchemas", "false") + "\"" +
+                " hideExport=\"" + getBoolean(parameters, "hideExport", "false") + "\"" +
+                " router=\"hash\"" +
+                " />";
     }
 
     public BodyType getBodyType() {
@@ -33,5 +41,14 @@ public class StoplightElementsPreviewer implements Macro {
 
     public OutputType getOutputType() {
         return OutputType.BLOCK;
+    }
+
+    private String getBoolean(Map<String, String> parameters, String parameter, String defaultValue) {
+        String value = parameters.get(parameter);
+        if (value == null) {
+            return defaultValue;
+        }
+
+        return value;
     }
 }
