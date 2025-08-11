@@ -26,11 +26,11 @@ public class StoplightElementsPreviewer implements Macro {
 
         return "<elements-api" +
                 " apiDescriptionUrl=\"" + parameters.get("link") + "\"" +
-                " hideInternal=\"" + getBoolean(parameters, "hideInternal", "false") + "\"" +
-                " hideTryIt=\"" + getBoolean(parameters, "hideTryIt", "false") + "\"" +
-                " hideTryItPanel=\"" + getBoolean(parameters, "hideTryItPanel", "false") + "\"" +
-                " hideSchemas=\"" + getBoolean(parameters, "hideSchemas", "false") + "\"" +
-                " hideExport=\"" + getBoolean(parameters, "hideExport", "false") + "\"" +
+                getBoolean(parameters, "hideInternal") +
+                getBoolean(parameters, "hideTryIt") +
+                getBoolean(parameters, "hideTryItPanel") +
+                getBoolean(parameters, "hideSchemas") +
+                getBoolean(parameters, "hideExport") +
                 " router=\"hash\"" +
                 " />";
     }
@@ -43,12 +43,13 @@ public class StoplightElementsPreviewer implements Macro {
         return OutputType.BLOCK;
     }
 
-    private String getBoolean(Map<String, String> parameters, String parameter, String defaultValue) {
+    private String getBoolean(Map<String, String> parameters, String parameter) {
         String value = parameters.get(parameter);
-        if (value == null) {
-            return defaultValue;
+        // Params doesn't accept false values (converted "false" to true)
+        if (value == null || value.equals("false")) {
+            return "";
         }
 
-        return value;
+        return " " + parameter + "=\"true\"";
     }
 }
