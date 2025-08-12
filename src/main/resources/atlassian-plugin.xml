@@ -21,7 +21,7 @@
         <context>previewer-context</context>
     </web-resource>
     <xhtml-macro name="previewer-workspace" class="com.validate_lab.confluence.stoplightelements_previewer.macro.StoplightElementsPreviewer" key='previewer-workspace' icon="/download/resources/${atlassian.plugin.key}/images/Icon.png" >
-        <category name="media" />
+        <category name="external-content" />
         <parameters>
             <parameter name="link" type="url" required="true" >
                 <option key="showValueInPlaceholder" value="true"/>
