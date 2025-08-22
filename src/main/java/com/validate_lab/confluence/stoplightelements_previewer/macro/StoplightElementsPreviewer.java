@@ -25,6 +25,7 @@ public class StoplightElementsPreviewer implements Macro {
         pageBuilderService.assembler().resources().requireWebResource("com.validate_lab.confluence.stoplightelements_previewer:resources");
 
         return "<elements-api" +
+                " layout=\"" + getParameterFallback(parameters, "layout", "sidebar") +"\"" +
                 " apiDescriptionUrl=\"" + parameters.get("link") + "\"" +
                 getBoolean(parameters, "hideInternal") +
                 getBoolean(parameters, "hideTryIt") +
@@ -51,5 +52,14 @@ public class StoplightElementsPreviewer implements Macro {
         }
 
         return " " + parameter + "=\"true\"";
+    }
+
+    private String getParameterFallback(Map<String, String> parameters, String parameter, String defaultValue) {
+        String value = parameters.get(parameter);
+        if (value == null || value.isEmpty()) {
+            return defaultValue;
+        }
+
+        return value;
     }
 }
